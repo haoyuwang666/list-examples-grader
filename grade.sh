@@ -8,7 +8,9 @@ mkdir grading-area
 git clone $1 student-submission
 echo 'Finished cloning'
 
-if [[ -e ListExamples.java]]
+set -e
+
+if [[ -f ListExamples.java]]
 then 
   echo "submitted successfully"
 else
@@ -18,7 +20,7 @@ fi
 cp -r student-submission grading-area
 cd grading-area
 javac ListExamples.java TestlistExamples.java
-java TestlistExample
+java TestlistExamples
 
 
 
